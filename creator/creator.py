@@ -65,17 +65,18 @@ def create_password():
     print("Lets create a new password")
     the_password = list()
     length = 0
-    while length < 4 and length > 20:
+    while True:
         try:
             length = int(input("How long should the password be(4 - 20):"))
             if length >= 4 and length <= 20:
                 break
             else:
                 continue
-        except Exception:
+        except ValueError:
             print("Please enter a number between 4 and 20")
-            length = 0
-    big_list = create_superlist() 
+
+    big_list = create_superlist()
+    print(big_list)
     while length > 0:
         the_password.append(choice(big_list))
         length -= 1
